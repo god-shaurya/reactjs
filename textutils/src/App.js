@@ -2,15 +2,15 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import FormText from './components/FormText';
-import Aboutus from './components/Aboutus';
+// import Aboutus from './components/Aboutus';
 import React, { useState } from 'react'
 import Alert from './components/Alert';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route,
+//   Link
+// } from "react-router-dom";
 
 
 // let name = "shaurya";
@@ -56,20 +56,20 @@ function App() {
 
   return (
     <>
-      <Router>
+      {/* <Router> */}
         <Navbar mode={mode} togglemode={togglemode} swtxt={swtxt} />
         <Alert alert={alert} />
 
         {/* <div className="container"><Aboutus /></div> */}
-        <Routes>
-        <Route path='/Aboutus' element={<Aboutus />} />
+        {/* <Routes>
+        <Route path='/Aboutus' element={<Aboutus />} /> */}
 
-          <Route path='/' element={<div className="container my-3" ><FormText mode={mode} showAlert={showAlert} /></div>} />
-        </Routes>
+          <div className="container my-3" ><FormText mode={mode} showAlert={showAlert} /></div>
+        {/* </Routes> */}
             
 
 
-      </Router>
+      {/* </Router> */}
 
     </>
   );
