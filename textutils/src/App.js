@@ -2,18 +2,18 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import FormText from './components/FormText';
-// import Aboutus from './components/Aboutus';
+import Aboutus from './components/Aboutus';
 import React, { useState } from 'react'
 import Alert from './components/Alert';
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route,
-//   Link
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 
 
-// let name = "shaurya";
+let name = "shaurya";
 function App() {
   const [mode, setMode] = useState("light")
   const [swtxt, setSwtxt] = useState("Light mode Enabled")
@@ -36,13 +36,13 @@ function App() {
       setSwtxt("Dark mode Enabled")
       document.body.style.backgroundColor = "black"
       showAlert("Dark Mode Enabled", "success")
-      document.title = "Text utils -DARK MODE"
-      setInterval(() => {
-        document.title = "Install textutils now"
-      }, 2000);
-      setInterval(() => {
-        document.title = "It is amazing"
-      }, 1500);
+      // document.title = "Text utils -DARK MODE"
+      // setInterval(() => {
+      //   document.title = "Install textutils now"
+      // }, 2000);
+      // setInterval(() => {
+      //   document.title = "It is amazing"
+      // }, 1500);
 
     }
     else {
@@ -56,20 +56,21 @@ function App() {
 
   return (
     <>
-      {/* <Router> */}
+      <Router>
         <Navbar mode={mode} togglemode={togglemode} swtxt={swtxt} />
         <Alert alert={alert} />
 
         {/* <div className="container"><Aboutus /></div> */}
-        {/* <Routes>
-        <Route path='/Aboutus' element={<Aboutus />} /> */}
+        <Routes>
+        <Route path='/Aboutus' element={<Aboutus mode={mode}/>} />
+        <Route path='/' element={<div className="container my-3" ><FormText mode={mode} showAlert={showAlert} /></div>} />
 
-          <div className="container my-3" ><FormText mode={mode} showAlert={showAlert} /></div>
-        {/* </Routes> */}
+          
+        </Routes>
             
 
 
-      {/* </Router> */}
+      </Router>
 
     </>
   );
